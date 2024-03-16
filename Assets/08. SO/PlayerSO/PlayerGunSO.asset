@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f26fa5418ff80844b9204a60bf3915c, type: 3}
+  m_Name: PlayerGunSO
+  m_EditorClassIdentifier: 
+  OriginPos: {x: 0.64, y: -0.37, z: 0.95}
+  FineSightOriginPos: {x: 0, y: -0.37, z: 2.5}
+  GunName: Musket
+  Range: 45
+  FireRate: 1.5
+  ReloadTime: 2
+  Damage: 35
+  RetroActionForce: 0.8
+  RetroActionFineSightForce: 0.3
+  Accuracy: 0.05
+  AccuracyFineSight: 0.02
