@@ -266,16 +266,27 @@ public void StartSFX(string name, Vector3 position)
 ### 1. InputAction을 이용한 Player 이동 개선
   <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/401b8466-c112-43e6-ab26-1a410670b324" width="50%"/>
 
-#### 문제 상황
-* Player 이동 개선
-* 기존 Player Input 클래서 이동 구현
-** 간편하고 직관적으로 구현 가능
-** Update 문에서 매 프레임 실행하기 때문에 성능에 영향
+#### Input 클래스로 Player 이동 구현
+- 간편하고 직관적으로 구현 가능
+- Update 문에서 매 프레임 실행하기 때문에 성능에 영향
+```
+private void FixedUpdate()
+{
+	float moveHorizontal = Input.GetAxis("Horizontal");
+	float moveVertical = Input.GetAxis("Vertical");
+	
+	Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
+	Rigidbody.AddForce(movement * speed);
+}
+```
 
-
-#### 해결 방안
+#### InputAction으로 개선
+- 입력 이벤트에 대한 바인딩 및 처리를 쉽게 구성
+- Update문에서 매 프레임 실행할 필요가 없음
+- 다양한 입력 장치를 지원
 
 #### 결과
+- 복잡한 입력 시스템이나 다중 입력 조합을 유연하게 처리
 
 
 
