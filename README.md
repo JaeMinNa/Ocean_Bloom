@@ -55,13 +55,9 @@
 
 ### GameManager
 ![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/9e6cf307-c767-430f-becf-6c92e9706628)
-
-    
-
+   
 ### Player   
 ![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/28588140-a69c-4b72-8199-e2d35313b1ed)
-
-    
 
 ### Enemy
 ![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/912af85b-4a6f-4cad-96ea-c976dd18cb6d)
@@ -268,8 +264,7 @@ public void StartSFX(string name, Vector3 position)
 ## 💥 트러블 슈팅
 
 ### 1. InputAction을 이용한 Player 이동 개선
-<p align="center">
-  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/401b8466-c112-43e6-ab26-1a410670b324" width="50%"/>
+![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/401b8466-c112-43e6-ab26-1a410670b324)
 
 #### 도입 이유
 - Player 이동 개선
