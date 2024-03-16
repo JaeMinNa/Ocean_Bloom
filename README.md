@@ -164,7 +164,7 @@ public GameObject SpawnFromPool(string tag)
 <br/>
 
 #### 구현 이유
-- 각각 Manger들을 통합하여 접근 가능한 Manager가 필요
+- 각각 Manager들을 통합하여 접근 가능한 Manager가 필요
 
 #### 구현 방법
 - 어디서든 쉽게 접근이 가능해야 하므로 싱글톤 사용
