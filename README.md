@@ -263,7 +263,7 @@ public void StartSFX(string name, Vector3 position)
 
 ## 💥 트러블 슈팅
 
-### 1. InputAction을 이용한 Player 이동 개선
+### 1. Input System을 이용한 Player 이동 개선
   <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/401b8466-c112-43e6-ab26-1a410670b324" width="50%"/>
 
 #### Input 클래스로 Player 이동 구현
@@ -276,17 +276,74 @@ private void FixedUpdate()
 	float moveVertical = Input.GetAxis("Vertical");
 	
 	Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
-	Rigidbody.AddForce(movement * speed);
+	_rigidbody.AddForce(movement * speed);
 }
 ```
 
-#### InputAction으로 개선
+#### Input System으로 개선
 - 입력 이벤트에 대한 바인딩 및 처리를 쉽게 구성
 - Update문에서 매 프레임 실행할 필요가 없음
 - 다양한 입력 장치를 지원
+```
+public void OnMoveInput(InputAction.CallbackContext context)
+{
+	if (context.phase == InputActionPhase.Performed)
+	{
+	    _curMovementInput = context.ReadValue<Vector2>();
+	}
+	else if (context.phase == InputActionPhase.Canceled)
+	{
+	    _curMovementInput = Vector2.zero;
+	}
+}
+
+private void Move()
+{
+	Vector3 dir = transform.forward * _curMovementInput.y + transform.right * _curMovementInput.x;
+	dir *= MoveSpeed;
+	dir.y = _rigidbody.velocity.y;
+	
+	_rigidbody.velocity = dir;
+}
+```
 
 #### 결과
 - 복잡한 입력 시스템이나 다중 입력 조합을 유연하게 처리
+<br/>
+
+### 2. Physics.Raycast를 이용한 총기 구현 개선
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/d736e5a7-8aca-4f6b-b4af-56039f537bb6" width="50%"/>
+
+#### 총알 프리팹을 생성해서 총기 구현
+- 실제와 같은 총알 속도, 탄도학 등 적용 가능
+- 실제와 유사하게 적용하는 것이 어려움
+- 적적한 메모리 관리 방법 필요
+```
+private void Fire()
+{
+	Instantiate(bullet, transform.position, Quaternion.identity);
+}
+```
+
+#### Physics.Raycast로 개선
+- 총알 프리팹을 생성할 필요가 없음
+- 즉각적으로 대상의 정보를 읽어 올 수 있음
+- 별도의 메모리 관리 방법이 필요 없음
+```
+if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out _hitInfo, 50f))
+{
+    Debug.Log(_hitInfo.transform.name);
+}
+```
+
+#### 결과
+- 초당 프레임 개선 (63 FPS → 73 FPS)
+<p align="center">
+  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/5b4e21fc-eaef-4272-986f-ec634f077708" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/dee9851e-ed68-4e00-80ca-6c9db30fc122" width="49%"/>
+</p>
+
+
 
 
 
