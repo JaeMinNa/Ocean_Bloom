@@ -266,16 +266,16 @@ public void StartSFX(string name, Vector3 position)
 ### 1. InputAction을 이용한 Player 이동 개선
   <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/401b8466-c112-43e6-ab26-1a410670b324" width="50%"/>
 
-#### 도입 이유
-- Player 이동 개선
-
 #### 문제 상황
+- Player 이동 개선
+- 기존 Player Input 클래서 이동 구현
+** 간편하고 직관적으로 구현 가능
+** Update 문에서 매 프레임 실행하기 때문에 성능에 영향
+
 
 #### 해결 방안
 
-#### 의견 조율
-
-#### 의견 결정
+#### 결과
 
 
 
