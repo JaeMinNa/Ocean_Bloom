@@ -197,15 +197,12 @@ private void Release()
 ### 4. 로딩 씬 구현
   
 ⚠️ 구현 이유
-
 - 씬이 전환 될 때, 다음 씬에서 사용될 리소스들을 읽어와서 게임을 위한 준비 작업 필요
 - 로딩 화면이 없다면 가만히 멈춘 화면이나 까만 화면만 보일 수 있음
 - 씬이 전환 될 때, 지루한 대기 시간을 이미지나 Tip으로 지루하지 않게 하기 위해
 
 💡 구현 방법
-
 - 비동기 방식 씬 전환 구현
-
 ```csharp
 IEnumerator LoadScene()
 {
@@ -267,4 +264,10 @@ public void StartSFX(string name, Vector3 position)
 }
 ```
 <br/>
+
+## 💥 트러블 슈팅
+### 1. InputAction을 이용한 Player 이동 개선
+
+
+
 
