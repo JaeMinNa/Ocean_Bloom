@@ -273,6 +273,74 @@ public void StartSFX(string name, Vector3 position)
 ```
 <br/>
 
+### 6. Player 3단 콤보 공격 구현
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/8ff5ecb8-3c7b-4a1c-8ae3-cf0b76d33911" width="50%"/> 
+
+#### 구현 이유
+- Player의 연속 공격 구현
+
+#### 구현 방법
+- Sub-State Machine로 각각 애니메이션을 연결
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/f25b1057-7d5d-474d-8013-dd3da44fc75a" width="50%"/>
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/6c4bf20c-2d8e-4a71-a960-65c6864f3149" width="50%"/> 
+
+```C#
+public void OnAttackInput(InputAction.CallbackContext context)
+{
+    if (context.phase == InputActionPhase.Started)
+    {
+        _animator.SetTrigger("Attack");
+    }
+}
+```
+<br/>
+
+### 7. 튜토리얼 시스템 구현
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/c3193176-cf88-4d67-b2c5-60164304ae24" width="50%"/> 
+
+#### 구현 이유
+- 유저 피드백에서 게임 진행에 대한 정보가 부족하다는 피드백을 받음
+
+#### 구현 방법
+- Tutorial 빈 게임오브젝트에 Canvas 추가, Canvas의 자식으로 튜토리얼 UI 생성
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/64a266c5-3c45-45db-9375-ff17ef0b235d" width="50%"/>
+
+- 튜토리얼을 실행하는 콜라이더 범위 IsTrigger로 설정
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/73f72464-9058-45b6-89d8-ee5d000547eb" width="50%"/>
+
+- 튜토리얼을 관리하는 스크립트와 튜토리얼 범위를 관리하는 스크립트 작성
+```C#
+public void TutorialActive(int num)
+{
+	_tutorials[num].SetActive(true);
+	Time.timeScale = 0f;
+	_isPause = true;
+	IsTutorialActive[num] = true;
+}
+```
+<br/>
+
+### 8. 방치형 보상 기능 구현
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/cc22c720-a795-4d9a-811c-e4d0fcb6c781" width="50%"/> 
+
+#### 구현 이유
+- 마지막 저장 시간에 따른 보상 지급
+
+#### 구현 방법
+- DateTime.Now로 마지막 저장 시간을 구해서 PlayerPrefs로 로컬 저장
+- 저장한 시간과 현재 시간을 계산해서 경과 시간을 계산
+- 경과 시간에 따라 보상을 지급
+```C#
+if (PlayerPrefs.HasKey("LastTime"))
+{
+    _lastTime = DateTime.Parse(PlayerPrefs.GetString("LastTime"));
+    _currentTime = DateTime.Now;
+    _timeSpan = _currentTime - _lastTime;
+    _rewardTime = _timeSpan.TotalSeconds;
+}
+```
+<br/>
+
 ## 💥 트러블 슈팅
 
 ### 1. Input System을 이용한 Player 이동 개선
