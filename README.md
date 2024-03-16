@@ -264,7 +264,6 @@ public void StartSFX(string name, Vector3 position)
 ## 💥 트러블 슈팅
 
 ### 1. InputAction을 이용한 Player 이동 개선
-<p align="center">
   <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/401b8466-c112-43e6-ab26-1a410670b324" width="50%"/>
 
 #### 도입 이유
