@@ -47,6 +47,10 @@
   </p>
 <br/>
 
+## 🔳 와이어 프레임
+![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/55a6fc97-c435-4d0b-8b14-ad77a930ecbb)
+
+
 ## 🧩 클라이언트 구조
 
 ### GameManager
