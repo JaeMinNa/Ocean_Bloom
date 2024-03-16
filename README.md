@@ -390,16 +390,17 @@ ObjectPool
 ```
 public GameObject SpawnFromPool(string tag)
 {
-if (!PoolDictionary.ContainsKey(tag))
-    return null;
-
-GameObject obj = PoolDictionary[tag].Dequeue();
-PoolDictionary[tag].Enqueue(obj);
-
-return obj;
+	if (!PoolDictionary.ContainsKey(tag))
+	    return null;
+	
+	GameObject obj = PoolDictionary[tag].Dequeue();
+	PoolDictionary[tag].Enqueue(obj);
+	
+	return obj;
 }
 ```
 <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/558554b0-f1c7-4bd5-b0d0-334c68ce8041" width="50%"/>
+![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/558554b0-f1c7-4bd5-b0d0-334c68ce8041)
 
 #### 결과
 - 초당 프레임 개선 (50 FPS → 76 FPS)
