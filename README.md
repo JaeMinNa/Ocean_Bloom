@@ -399,7 +399,6 @@ public GameObject SpawnFromPool(string tag)
 	return obj;
 }
 ```
-<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/558554b0-f1c7-4bd5-b0d0-334c68ce8041" width="50%"/>
 ![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/558554b0-f1c7-4bd5-b0d0-334c68ce8041)
 
 #### 결과
