@@ -453,6 +453,7 @@ public GameObject SpawnFromPool(string tag)
 <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/3187c4ed-2000-44df-b310-79ad0154658f" width="50%"/>
 - 특정 범위 내의 적이나 동료 판별 가능
 - 코루틴 함수로 일정 시간 반복해서 사용해야 함
+
 ```C#
 private void Targetting()
 {
@@ -476,6 +477,7 @@ private void Targetting()
 #### 해결 방안
 ##### PlayerPrefs 사용
 - 유니티에서 제공하는 기능으로 직관적으로 간단하게 사용 가능
+
 ```C#
 public void DataSave()
 {
