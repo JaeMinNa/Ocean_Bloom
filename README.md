@@ -133,7 +133,7 @@ IEnumerator COUpdate()
 <br/>
 
 ### 2. ObjectPool 구현
-<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/189c6289-ef59-4bbf-bb83-c61ff3c56f15" width="50%"/>
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/51eaa960-70bc-4614-8236-36bcd36584bd" width="50%"/>
 
 #### 구현 이유
 - 미리 생성한 총탄 프리팹을 파괴하지 않고, 재사용을 위해
@@ -157,6 +157,11 @@ public GameObject SpawnFromPool(string tag)
 <br/>
 
 ### 3. GameManger 구현
+<p align="center">
+  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/40fa1552-3838-46b1-9eef-728f75aced92" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/f89a51ef-2103-45d7-bfb4-977fa98f9f3a" width="49%"/>
+</p>
+<br/>
 
 #### 구현 이유
 - 각각 Manger들을 통합하여 접근 가능한 Manager가 필요
@@ -193,7 +198,8 @@ private void Release()
 <br/>
 
 ### 4. 로딩 씬 구현
-  
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/dc119f73-2223-4ff2-8744-5346ba599a42" width="50%"/>  
+
 #### 구현 이유
 - 씬이 전환 될 때, 다음 씬에서 사용될 리소스들을 읽어와서 게임을 위한 준비 작업 필요
 - 로딩 화면이 없다면 가만히 멈춘 화면이나 까만 화면만 보일 수 있음
@@ -347,7 +353,6 @@ if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forwar
 <br/>
 
 ### 3. ObjectPool을 이용한 총기 탄피 구현 개선
-<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/51eaa960-70bc-4614-8236-36bcd36584bd" width="50%"/>
 
 #### 프리팹 생성, 파괴로 총기 탄피 구현
 - 간단하고 직관적으로 구현 가능
