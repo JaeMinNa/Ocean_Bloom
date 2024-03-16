@@ -138,6 +138,7 @@ IEnumerator COUpdate()
 #### 구현 이유
 - 미리 생성한 총탄 프리팹을 파괴하지 않고, 재사용을 위해
 - 프리팹의 Instantiate, Destroy 함수 사용을 줄이기 위해
+- 재사용해서 최적화를 위해
 
 #### 구현 방법
 - ObjectPoolManager로 ObjectPool들을 관리
@@ -206,7 +207,7 @@ private void Release()
 - 씬이 전환 될 때, 지루한 대기 시간을 이미지나 Tip으로 지루하지 않게 하기 위해
 
 #### 구현 방법
-- 비동기 방식 씬 전환 구현
+- 씬을 불러오는 도중에 다른 작업이 가능 비동기 방식 씬 전환 구현
 ```C#
 IEnumerator LoadScene()
 {
@@ -239,7 +240,8 @@ IEnumerator LoadScene()
 }
 ```
 
-- allowSceneActivation을 false로 설정
+- 리소스 로딩이 끝나기 전에 씬 로딩 되는 것을 막기 위해 allowSceneActivation을 false로 설정
+- allowSceneActivation을 false로 90% 로드 한 상태로 대기하고, true 변경 시, 남은 부분을 로드하고 씬 이동
 <br/>
 
   
