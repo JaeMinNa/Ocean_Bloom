@@ -415,20 +415,21 @@ public GameObject SpawnFromPool(string tag)
   <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/189c6289-ef59-4bbf-bb83-c61ff3c56f15" width="49%"/>
 </p>
 
-#### 프리팹 생성, 파괴로 총기 탄피 구현
-- 간단하고 직관적으로 구현 가능
-- 반복적인 프리팹 생성, 삭제로 성능 저하 초래
-- 적절한 메모리 관리 방법 필요
-```
-private void Fire()
-{
-	Instantiate(_bulletEffectObj, transform.position, Quaternion.identity);
-}
-```
+#### 문제 상황
+- 적과 동료의 독립적인 움직임을 구현하기 위한 방법이 필요
 
-#### ObjectPool로 개선
-- 프리팹 생성, 파괴를 하지 않음
-- 객체를 미리 생성해서 재사용 → 메모리 최적화 가능
+#### 해결 방안
+- 조건문과 스위치문 사용
+	간단하고 직관적으로 구현 가능
+	행동이 많다면 코드가 복잡해짐
+- 상태 패턴
+	새로운 상태 추가가 쉬움
+	확장성이 용이
+  
+#### 의견 결정
+- 상태 패턴으로 구현
+	특정 조건에 따라 각각 다른 행동을 할 수 있음
+	특정 행동을 추가해도 유지 관리가 용이
 
 
 
