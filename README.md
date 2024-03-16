@@ -441,6 +441,7 @@ public GameObject SpawnFromPool(string tag)
 ##### BoxCollider로 IsTrigger 범위 설정
 - 간단하게 구현 가능
 ##### Physics.OverlapSphere를 사용
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/3187c4ed-2000-44df-b310-79ad0154658f" width="50%"/>
 - 특정 범위 내의 적이나 동료 판별 가능
 - 코루틴 함수로 일정 시간 반복해서 사용해야 함
 ```C#
@@ -450,12 +451,47 @@ private void Targetting()
 	_targets = Physics.OverlapSphere(transform.position, 50f, layerMask);
 }
 ```
-<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/3187c4ed-2000-44df-b310-79ad0154658f" width="50%"/>
  
 #### 의견 결정
 ##### Physics.OverlapSphere로 구현
 - BoxCollider 사용 시, 총기 구현에서 사용한 Physics.Raycast가 BoxCollider를 먼저 인식해서 적을 인식할 수 없음
 - 범위 내에서 가장 가까운 적이나 동료를 지정 가능
 
+### 6. PlayerPrefs를 이용한 데이터 저장 기능 구현
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/a1088497-fab3-4f63-87fd-7a9184a5a1b2" width="50%"/>
+
+#### 문제 상황
+- Player의 정보와 배의 위치를 저장할 수 있는 간단한 저장 방법 필요
+
+#### 해결 방안
+##### PlayerPrefs 사용
+- 유니티에서 제공하는 기능으로 직관적으로 간단하게 사용 가능
+```C#
+public void DataSave()
+{
+	// Player 정보 저장
+	PlayerPrefs.SetFloat("SaveHp", _playerConditions.Health.CurValue);
+	PlayerPrefs.SetInt("SaveCurrentBullet", _playerController.GunController.CurrentGun.CurrentBulletCount);
+	PlayerPrefs.SetInt("SaveCoin", _playerController.CurrentCoin);
+}
+
+public void DataLoad()
+{
+	// Player 정보 불러오기
+	_playerConditions.Health.CurValue = PlayerPrefs.GetFloat("SaveHp");
+	_playerController.GunController.CurrentGun.CurrentBulletCount = PlayerPrefs.GetInt("SaveCurrentBullet");
+	_playerController.CurrentCoin = PlayerPrefs.GetInt("SaveCoin") ;
+}
+```
+
+##### 직렬화 및 파일 저장 사용
+- 안전하고 속도가 매우 빠름
+##### 데이터베이스 사용
+- 대규모 데이터를 저장하고 관리에 적합
+
+#### 의견 결정
+##### PlayerPrefs로 구현
+- 간단한 정보만 저장하면 되기 때문에 로컬 저장이 맞다고 판단
+- 간단하게 사용할 수 있기 때문에 단순한 게임 진행도는 PlayerPrefs로 충분히 구현 가능
 
 
