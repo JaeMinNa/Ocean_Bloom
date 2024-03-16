@@ -54,26 +54,17 @@
 ## 🧩 클라이언트 구조
 
 ### GameManager
-
-- GameManager
-    
-    ![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/9e6cf307-c767-430f-becf-6c92e9706628)
+![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/9e6cf307-c767-430f-becf-6c92e9706628)
 
     
 
-### Player
-
-- Player
-    
-    ![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/28588140-a69c-4b72-8199-e2d35313b1ed)
+### Player   
+![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/28588140-a69c-4b72-8199-e2d35313b1ed)
 
     
 
 ### Enemy
-
-- Enemy
- 
-   ![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/912af85b-4a6f-4cad-96ea-c976dd18cb6d)
+![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/912af85b-4a6f-4cad-96ea-c976dd18cb6d)
 
 
 ## ✏️ 기술적인 도전 과제
