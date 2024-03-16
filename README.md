@@ -66,6 +66,7 @@
 ## ✏️ 구현 기능
 
 ### 1. 상태 패턴 구현
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/189c6289-ef59-4bbf-bb83-c61ff3c56f15" width="50%"/>
 
 #### 구현 이유
 - 다양한 상태를 가진 적과 동료 움직임 구현
@@ -132,6 +133,7 @@ IEnumerator COUpdate()
 <br/>
 
 ### 2. ObjectPool 구현
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/189c6289-ef59-4bbf-bb83-c61ff3c56f15" width="50%"/>
 
 #### 구현 이유
 - 미리 생성한 총탄 프리팹을 파괴하지 않고, 재사용을 위해
@@ -264,7 +266,7 @@ public void StartSFX(string name, Vector3 position)
 ## 💥 트러블 슈팅
 
 ### 1. Input System을 이용한 Player 이동 개선
-  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/401b8466-c112-43e6-ab26-1a410670b324" width="50%"/>
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/401b8466-c112-43e6-ab26-1a410670b324" width="50%"/>
 
 #### Input 클래스로 Player 이동 구현
 - 간편하고 직관적으로 구현 가능
@@ -332,7 +334,7 @@ private void Fire()
 ```C#
 if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out _hitInfo, 50f))
 {
-    Debug.Log(_hitInfo.transform.name);
+	Debug.Log(_hitInfo.transform.name);
 }
 ```
 
@@ -410,10 +412,7 @@ public GameObject SpawnFromPool(string tag)
 <br/>
 
 ### 4. 상태 패턴을 이용한 적과 동료 구현
-<p align="center">
-  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/86cd872d-3d7e-4dba-94c8-5e29f8b92a86" width="49%"/>
-  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/189c6289-ef59-4bbf-bb83-c61ff3c56f15" width="49%"/>
-</p>
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/86cd872d-3d7e-4dba-94c8-5e29f8b92a86" width="50%"/>
 
 #### 문제 상황
 - 적과 동료의 독립적인 움직임을 구현하기 위한 방법이 필요
