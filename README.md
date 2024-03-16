@@ -431,5 +431,31 @@ public GameObject SpawnFromPool(string tag)
 - 특정 조건에 따라 각각 다른 행동을 할 수 있음
 - 특정 행동을 추가해도 유지 관리가 용이
 
+### 5. Physics.OverlapSphere를 이용한 Targetting 구현
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/dbfc5b0a-af38-477d-a89c-63363e19549d" width="50%"/>
+
+#### 문제 상황
+- 동료와 적의 단체 전투 요소를 위해 Targetting 방법이 필요
+
+#### 해결 방안
+##### BoxCollider로 IsTrigger 범위 설정
+- 간단하게 구현 가능
+##### Physics.OverlapSphere를 사용
+- 특정 범위 내의 적이나 동료 판별 가능
+- 코루틴 함수로 일정 시간 반복해서 사용해야 함
+```C#
+private void Targetting()
+{
+	int layerMask = (1 << _layerMask);	// Layer 설정
+	_targets = Physics.OverlapSphere(transform.position, 50f, layerMask);
+}
+```
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/3187c4ed-2000-44df-b310-79ad0154658f" width="50%"/>
+ 
+#### 의견 결정
+##### Physics.OverlapSphere로 구현
+- BoxCollider 사용 시, 총기 구현에서 사용한 Physics.Raycast가 BoxCollider를 먼저 인식해서 적을 인식할 수 없음
+- 범위 내에서 가장 가까운 적이나 동료를 지정 가능
+
 
 
