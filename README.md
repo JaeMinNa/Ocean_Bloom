@@ -158,8 +158,8 @@ public GameObject SpawnFromPool(string tag)
 
 ### 3. GameManger 구현
 <p align="center">
-  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/40fa1552-3838-46b1-9eef-728f75aced92" width="49%"/>
   <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/f89a51ef-2103-45d7-bfb4-977fa98f9f3a" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/40fa1552-3838-46b1-9eef-728f75aced92" width="49%"/>
 </p>
 <br/>
 
