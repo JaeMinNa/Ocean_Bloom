@@ -71,10 +71,10 @@
 
 ### 1. 상태 패턴 구현
 
-⚠️ 구현 이유
+구현 이유
 - 다양한 상태를 가진 적과 동료 움직임 구현
 
-💡 구현 방법
+구현 방법
 - IState 인터페이스 : 구체적인 상태 클래스로 연결할 수 있도록 설정
 ```C#
 public interface IEnemyState
@@ -137,11 +137,11 @@ IEnumerator COUpdate()
 
 ### 2. ObjectPool 구현
 
-⚠️ 구현 이유
+구현 이유
 - 미리 생성한 총탄 프리팹을 파괴하지 않고, 재사용을 위해
 - 프리팹의 Instantiate, Destroy 함수 사용을 줄이기 위해
 
-💡 구현 방법
+구현 방법
 - ObjectPoolManager로 ObjectPool들을 관리
 - Size만큼 미리 프리팹을 생성하고, 선입선출인 Queue 자료구조로 순차적으로 SetActive(true) 실행
 ```C#
@@ -160,10 +160,10 @@ public GameObject SpawnFromPool(string tag)
 
 ### 3. GameManger 구현
 
-⚠️ 구현 이유
+구현 이유
 - 각각 Manger들을 통합하여 접근 가능한 Manager가 필요
 
-💡 구현 방법
+구현 방법
 - 어디서든 쉽게 접근이 가능해야 하므로 싱글톤 사용
 - GameManger은 Manager들을 관리하는 하나의 역할만 수행
 ```C#
@@ -196,12 +196,12 @@ private void Release()
 
 ### 4. 로딩 씬 구현
   
-⚠️ 구현 이유
+구현 이유
 - 씬이 전환 될 때, 다음 씬에서 사용될 리소스들을 읽어와서 게임을 위한 준비 작업 필요
 - 로딩 화면이 없다면 가만히 멈춘 화면이나 까만 화면만 보일 수 있음
 - 씬이 전환 될 때, 지루한 대기 시간을 이미지나 Tip으로 지루하지 않게 하기 위해
 
-💡 구현 방법
+구현 방법
 - 비동기 방식 씬 전환 구현
 ```csharp
 IEnumerator LoadScene()
@@ -241,11 +241,11 @@ IEnumerator LoadScene()
   
 ### 5. 3D 사운드 구현
 
-⚠️ 구현 이유
+구현 이유
 - 유니티에서 제공하는 3D 사운드 기능을 사용하니 거리에 따른 소리 음량 크기 조절이 한번씩 제대로 적용이 안되는 현상 발생
 - 사운드가 깨지거나 이상한 소리로 변질되어 재생되는 현상 발생
 
-💡 구현 방법
+구현 방법
 - 3D 사운드 기능을 사용하지 않고, 거리에 따라 볼륨을 직접 조절하는 방식으로 직접 구현
 - 미리 생성한 몇 개의 AudioSource가 순차적으로 재생하도록 구현
 
@@ -266,8 +266,19 @@ public void StartSFX(string name, Vector3 position)
 <br/>
 
 ## 💥 트러블 슈팅
+
 ### 1. InputAction을 이용한 Player 이동 개선
 
+도입 이유
+- Player 이동 개선
+
+⚠문제 상황
+
+해결 방안
+
+☑의견 조율
+
+의견 결정
 
 
 
