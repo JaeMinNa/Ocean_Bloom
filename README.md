@@ -250,6 +250,7 @@ IEnumerator LoadScene()
 #### 구현 이유
 - 유니티에서 제공하는 3D 사운드 기능을 사용하니 거리에 따른 소리 음량 크기 조절이 한번씩 제대로 적용이 안되는 현상 발생
 - 사운드가 깨지거나 이상한 소리로 변질되어 재생되는 현상 발생
+- 동시에 많은 수의 PlayOneShot 함수가 실행되면 리소스 및 처리 성능에 영향을 줄 수 있음
 
 #### 구현 방법
 - 3D 사운드 기능을 사용하지 않고, 거리에 따라 볼륨을 직접 조절하는 방식으로 직접 구현
@@ -436,6 +437,7 @@ public GameObject SpawnFromPool(string tag)
 ##### 상태 패턴으로 구현
 - 특정 조건에 따라 각각 다른 행동을 할 수 있음
 - 특정 행동을 추가해도 유지 관리가 용이
+<br/>
 
 ### 5. Physics.OverlapSphere를 이용한 Targetting 구현
 <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/dbfc5b0a-af38-477d-a89c-63363e19549d" width="50%"/>
@@ -462,6 +464,7 @@ private void Targetting()
 ##### Physics.OverlapSphere로 구현
 - BoxCollider 사용 시, 총기 구현에서 사용한 Physics.Raycast가 BoxCollider를 먼저 인식해서 적을 인식할 수 없음
 - 범위 내에서 가장 가까운 적이나 동료를 지정 가능
+<br/>
 
 ### 6. PlayerPrefs를 이용한 데이터 저장 기능 구현
 <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/a1088497-fab3-4f63-87fd-7a9184a5a1b2" width="50%"/>
@@ -499,5 +502,6 @@ public void DataLoad()
 ##### PlayerPrefs로 구현
 - 간단한 정보만 저장하면 되기 때문에 로컬 저장이 맞다고 판단
 - 간단하게 사용할 수 있기 때문에 단순한 게임 진행도는 PlayerPrefs로 충분히 구현 가능
+<br/>
 
 
