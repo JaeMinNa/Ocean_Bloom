@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/JaeMinNa/Sea_Bloom/assets/149378962/9c6639bb-3a68-480a-96f3-6999b9dd38ad" width="50%"/>
+  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/f879a8d6-f77a-4ba3-a96a-837c95b2ca28" width="50%"/>
 
 # 🖥️ Ocean Bloom (내배켐 유니티 2기 최종 팀프로젝트 23조)
 
