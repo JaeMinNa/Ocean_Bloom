@@ -199,7 +199,7 @@ private void Release()
 
 #### 구현 방법
 - 비동기 방식 씬 전환 구현
-```csharp
+```C#
 IEnumerator LoadScene()
 {
     yield return null;
@@ -269,7 +269,7 @@ public void StartSFX(string name, Vector3 position)
 #### Input 클래스로 Player 이동 구현
 - 간편하고 직관적으로 구현 가능
 - Update 문에서 매 프레임 실행하기 때문에 성능에 영향
-```
+```C#
 private void FixedUpdate()
 {
 	float moveHorizontal = Input.GetAxis("Horizontal");
@@ -284,7 +284,7 @@ private void FixedUpdate()
 - 입력 이벤트에 대한 바인딩 및 처리를 쉽게 구성
 - Update문에서 매 프레임 실행할 필요가 없음
 - 다양한 입력 장치를 지원
-```
+```C#
 public void OnMoveInput(InputAction.CallbackContext context)
 {
 	if (context.phase == InputActionPhase.Performed)
@@ -318,7 +318,7 @@ private void Move()
 - 실제와 같은 총알 속도, 탄도학 등 적용 가능
 - 실제와 유사하게 적용하는 것이 어려움
 - 적적한 메모리 관리 방법 필요
-```
+```C#
 private void Fire()
 {
 	Instantiate(bullet, transform.position, Quaternion.identity);
@@ -329,7 +329,7 @@ private void Fire()
 - 총알 프리팹을 생성할 필요가 없음
 - 즉각적으로 대상의 정보를 읽어 올 수 있음
 - 별도의 메모리 관리 방법이 필요 없음
-```
+```C#
 if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out _hitInfo, 50f))
 {
     Debug.Log(_hitInfo.transform.name);
@@ -351,7 +351,7 @@ if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forwar
 - 간단하고 직관적으로 구현 가능
 - 반복적인 프리팹 생성, 삭제로 성능 저하 초래
 - 적절한 메모리 관리 방법 필요
-```
+```C#
 private void Fire()
 {
 	Instantiate(_bulletEffectObj, transform.position, Quaternion.identity);
@@ -362,8 +362,8 @@ private void Fire()
 - 프리팹 생성, 파괴를 하지 않음
 - 객체를 미리 생성해서 재사용 → 메모리 최적화 가능
 
-ObjectPoolManager
-```
+##### ObjectPoolManager
+```C#
 public void GunEffect(string poolName ,Vector3 startPosition, Quaternion rotation)
 {
 	_bulletEffectObj = ObjectPool.SpawnFromPool(poolName);
@@ -386,8 +386,8 @@ IEnumerator COGunEffectInactive()
 }
 ```
 
-ObjectPool
-```
+##### ObjectPool
+```C#
 public GameObject SpawnFromPool(string tag)
 {
 	if (!PoolDictionary.ContainsKey(tag))
