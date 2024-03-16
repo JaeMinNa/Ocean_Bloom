@@ -342,8 +342,72 @@ if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forwar
   <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/5b4e21fc-eaef-4272-986f-ec634f077708" width="49%"/>
   <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/dee9851e-ed68-4e00-80ca-6c9db30fc122" width="49%"/>
 </p>
+<br/>
 
+### 3. ObjectPool을 이용한 총기 탄피 구현 개선
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/51eaa960-70bc-4614-8236-36bcd36584bd" width="50%"/>
 
+#### 프리팹 생성, 파괴로 총기 탄피 구현
+- 간단하고 직관적으로 구현 가능
+- 반복적인 프리팹 생성, 삭제로 성능 저하 초래
+- 적절한 메모리 관리 방법 필요
+```
+private void Fire()
+{
+	Instantiate(_bulletEffectObj, transform.position, Quaternion.identity);
+}
+```
+
+#### ObjectPool로 개선
+- 프리팹 생성, 파괴를 하지 않음
+- 객체를 미리 생성해서 재사용 → 메모리 최적화 가능
+
+ObjectPoolManager
+```
+public void GunEffect(string poolName ,Vector3 startPosition, Quaternion rotation)
+{
+	_bulletEffectObj = ObjectPool.SpawnFromPool(poolName);
+	
+	_bulletEffectObj.transform.position = startPosition;
+	_bulletEffectObj.transform.rotation = rotation;
+	//RangedAttackController attackController = obj.GetComponent<RangedAttackController>();
+	//attackController.InitializeAttack(direction, attackData, this);
+	
+	_bulletEffectObj.SetActive(true);
+	StartCoroutine(COGunEffectInactive());
+}
+
+IEnumerator COGunEffectInactive()
+{
+	GameObject obj = _bulletEffectObj;
+	
+	yield return new WaitForSeconds(0.5f);
+	obj.SetActive(false);
+}
+```
+
+ObjectPool
+```
+public GameObject SpawnFromPool(string tag)
+{
+if (!PoolDictionary.ContainsKey(tag))
+    return null;
+
+GameObject obj = PoolDictionary[tag].Dequeue();
+PoolDictionary[tag].Enqueue(obj);
+
+return obj;
+}
+```
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/558554b0-f1c7-4bd5-b0d0-334c68ce8041" width="50%"/>
+
+#### 결과
+- 초당 프레임 개선 (50 FPS → 76 FPS)
+<p align="center">
+  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/e02299d0-c341-4ce3-9006-d945f44c5431" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/3b3c0f06-0d57-4f9f-ad4a-7f0070b47a9e" width="49%"/>
+</p>
+<br/>
 
 
 
