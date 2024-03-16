@@ -138,9 +138,8 @@ IEnumerator COUpdate()
 <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/51eaa960-70bc-4614-8236-36bcd36584bd" width="50%"/>
 
 #### 구현 이유
-- 미리 생성한 총탄 프리팹을 파괴하지 않고, 재사용을 위해
+- 미리 생성한 총탄 프리팹을 파괴하지 않고, 재사용해서 최적화를 위해
 - 프리팹의 Instantiate, Destroy 함수 사용을 줄이기 위해
-- 재사용해서 최적화를 위해
 
 #### 구현 방법
 - ObjectPoolManager로 ObjectPool들을 관리
