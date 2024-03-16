@@ -409,5 +409,26 @@ public GameObject SpawnFromPool(string tag)
 </p>
 <br/>
 
+### 4. 상태 패턴을 이용한 적과 동료 구현
+<p align="center">
+  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/86cd872d-3d7e-4dba-94c8-5e29f8b92a86" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/189c6289-ef59-4bbf-bb83-c61ff3c56f15" width="49%"/>
+</p>
+
+#### 프리팹 생성, 파괴로 총기 탄피 구현
+- 간단하고 직관적으로 구현 가능
+- 반복적인 프리팹 생성, 삭제로 성능 저하 초래
+- 적절한 메모리 관리 방법 필요
+```
+private void Fire()
+{
+	Instantiate(_bulletEffectObj, transform.position, Quaternion.identity);
+}
+```
+
+#### ObjectPool로 개선
+- 프리팹 생성, 파괴를 하지 않음
+- 객체를 미리 생성해서 재사용 → 메모리 최적화 가능
+
 
 
