@@ -52,7 +52,7 @@
 
 - GameManager
     
-    ![image](https://github.com/JaeMinNa/Sea_Bloom/assets/149378962/7b83e2a6-9dd4-48e6-9388-d5dbad06f115)
+    ![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/9e6cf307-c767-430f-becf-6c92e9706628)
 
     
 
@@ -60,7 +60,7 @@
 
 - Player
     
-    ![image](https://github.com/JaeMinNa/Sea_Bloom/assets/149378962/d1982e1a-2a8e-404e-a619-fa0f0984a973)
+    ![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/28588140-a69c-4b72-8199-e2d35313b1ed)
 
     
 
@@ -68,7 +68,7 @@
 
 - Enemy
  
-   ![image](https://github.com/JaeMinNa/Sea_Bloom/assets/149378962/4e611d35-e304-4d9f-986d-6a43e242df47)
+   ![image](https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/912af85b-4a6f-4cad-96ea-c976dd18cb6d)
 
 
 ## ✏️ 기술적인 도전 과제
