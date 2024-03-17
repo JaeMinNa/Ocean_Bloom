@@ -577,3 +577,12 @@ public void DataLoad()
 <br/>
 
 
+## 👩‍👦‍👦 유저 테스트
+ - 유저 테스트 기간 : 24.02.21 ~ 24.02.28
+<br/>
+
+<img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/e23a933a-2f65-4024-881a-20619a0d3ac5" width="50%"/>
+<br/>
+
+
+
