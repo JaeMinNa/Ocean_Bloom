@@ -583,6 +583,8 @@ public void DataLoad()
 
 <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/e23a933a-2f65-4024-881a-20619a0d3ac5" width="50%"/>
 <br/>
+<br/>
+
 
 
 ## 📋 프로젝트 회고
