@@ -1,7 +1,7 @@
 <p align="center">
 <img src="https://github.com/JaeMinNa/Ocean_Bloom/assets/149379194/f879a8d6-f77a-4ba3-a96a-837c95b2ca28" width="50%"/>
 
-# 🖥️ Ocean Bloom (내배켐 유니티 2기 최종 팀 프로젝트 23조)
+# 🖥️ Ocean Bloom (내배켐 유니티 2기 23조 최종 팀 프로젝트)
 ### ❗ 유료 에셋 사용으로 에셋 부분은 삭제하였습니다. ❗
 
 + 식물학을 전공한 해군이 바다를 항해하면서 식물 도감을 모두 채울 수 있도록 도와주세요!
